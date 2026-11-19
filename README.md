@@ -118,21 +118,32 @@ GazeGuard/
 ├── assets/demo/             # Two reviewed demo MP4s + poster images
 ├── docs/                    # dataset, publishing and demo guides
 ├── src/gazeguard/
-│   ├── web/                 # browser frontend
+│   ├── web/                 # browser frontend (index.html, style.css, app.js)
 │   ├── webapp.py            # local dashboard server
 │   ├── vision.py            # MediaPipe face / hands
 │   ├── geometry.py          # normalized eye/head landmarks
 │   ├── automatic.py         # calibration-free monitoring
 │   ├── monitor.py           # gaze status classification
-│   └── trained_gaze.py      # optional trained-model validation
+│   ├── trained_gaze.py      # optional trained-model validation
+│   ├── calibration.py       # five-point gaze setup
+│   ├── alerts.py            # session alerts
+│   ├── analytics.py         # session analytics
+│   ├── cli.py               # command-line entry point
+│   ├── config.py            # configuration
+│   ├── gestures.py          # hand gestures
+│   ├── live_capture.py      # camera capture
+│   └── reporting.py         # session reports
 ├── training/                # consent-based data collection and trainer
 ├── tests/                   # automated tests
 ├── datasets/                # metadata; raw data excluded from Git
 ├── models/                  # metadata; local weights excluded from Git
-├── scripts/
+├── scripts/                 # Windows helper scripts and safety check
 ├── run.py
 ├── pyproject.toml
+├── requirements.txt
 ├── TRAINING_GUIDE.md
+├── CONTRIBUTING.md
+├── SECURITY.md
 └── README.md
 ```
 
