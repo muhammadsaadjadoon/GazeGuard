@@ -1,0 +1,6 @@
+# Install with: py -3.14 -m pip install -e .
+mediapipe==1.2.3
+opencv-contrib-python>=4.12,<5
+numpy>=2,<3
+
+Pillow>=11,<13

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GazeGuard | Live Camera Analytics</title><link rel="stylesheet" href="/style.css"></head>
+<body><main class="workspace">
+<section class="left-pane" aria-label="Live camera workspace">
+  <div class="video-card"><div id="video-stage" class="video-stage">
+    <img id="camera-frame" alt="Camera frame with face, iris and hand skeleton overlays">
+    <div id="video-empty" class="video-empty"><div class="lens-mark" aria-hidden="true"><span></span></div>
+      <h1 id="camera-placeholder-title">Initializing live camera</h1><p id="camera-placeholder-message">Connecting to your camera and loading on-device tracking…</p>
+    </div>
+    <div class="video-indicator" id="video-indicator"><span class="led"></span> LIVE CAMERA <span id="fps-label">— FPS</span></div>
+  </div></div>
+  <div class="signal-row" aria-label="Live detection summary">
+    <article class="signal"><span>CAMERA</span><strong id="signal-camera">Off</strong></article>
+    <article class="signal"><span>FACE</span><strong id="signal-face">Not detected</strong></article>
+    <article class="signal"><span>HEAD</span><strong id="signal-head">—</strong></article>
+    <article class="signal"><span>HANDS</span><strong id="signal-hands">0</strong></article>
+    <article class="signal signal-attention" id="attention-tile"><span>GAZE</span><strong id="signal-attention">Inactive</strong></article>
+  </div>
+  <div class="toolbar"><div class="auto-label"><span class="led"></span> AUTOMATIC LIVE MONITORING</div><button id="retry-camera" class="btn" hidden>Retry camera</button>
+    <button id="stop" class="btn">Stop camera</button><button id="export" class="btn">Export session</button>
+    <details id="advanced" class="advanced"><summary>Advanced calibration</summary>
+      <div class="advanced-actions"><button id="confirm" class="btn">Confirm step</button>
+      <button id="verify" class="btn">Verify lens</button><button id="teach" class="btn">Teach screen</button>
+      <button id="reset" class="btn">Start calibration</button><button id="automatic" class="btn">Back to automatic</button></div>
+    </details>
+  </div>
+  <footer>Local processing · No video recording · Gaze estimates are not evidence of cheating or misconduct</footer>
+</section>
+<aside class="right-pane" aria-label="Live telemetry"><div class="side-top"><div class="eyebrow">MONITORING</div><span class="side-mode" id="mode-label">AUTOMATIC</span></div>
+<div class="side-scroll">
+  <article class="state-card" id="attention-card"><div class="card-label">Live attention status <span class="state-dot"></span></div>
+    <h2 id="status">Inactive</h2><p id="reason">Initializing local camera tracking…</p></article>
+  <div class="compact-grid">
+    <article class="mini-card"><div class="card-label">Session</div><strong id="session-time">00:00</strong></article>
+    <article class="mini-card"><div class="card-label">Hands visible</div><strong id="hands">0</strong></article>
+    <article class="mini-card"><div class="card-label">Eye orientation</div><strong id="eye-direction">Unknown</strong></article>
+    <article class="mini-card"><div class="card-label">Head alignment</div><strong id="head-alignment">Unknown</strong></article>
+  </div>
+  <article class="info-card telemetry"><div class="card-label">Detection quality</div>
+    <div class="metric-line"><span>Face tracking</span><b id="face-detail">Waiting</b></div>
+    <div class="metric-line"><span>Hand skeleton</span><b id="hands-signal">Not visible</b></div>
+    <div class="metric-line"><span>Inference</span><b id="processing-delay">—</b></div>
+    <div class="metric-line"><span>Frame age</span><b id="capture-age">—</b></div>
+    <div class="metric-line"><span>Gesture</span><b id="gesture">—</b></div>
+  </article>
+  <article class="info-card" id="calibration-panel" hidden><div class="card-label">Advanced calibration</div>
+    <h3 id="calibration">Automatic</h3><p id="instruction">Manual calibration is optional.</p>
+    <div class="meter"><div id="progress" class="meter-bar"></div></div></article>
+  <article class="info-card note-card"><div class="card-label">Interpretation</div>
+    <p>ACTIVE means gaze appears near the camera axis. Ordinary webcams cannot always distinguish the physical lens from the nearby screen. LOOKING AWAY also includes invalid or obstructed readings. Do not use this estimate alone for examination decisions.</p>
+    <p id="session-attention" class="advanced-attention" hidden>—</p><span id="focus" hidden></span>
+  </article>
+</div></aside></main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div><script src="/app.js"></script></body></html>

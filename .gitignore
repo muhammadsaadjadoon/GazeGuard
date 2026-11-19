@@ -1,0 +1,47 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.build/
+build/
+dist/
+.env
+.env.*
+*.log
+# Consented webcam landmark feature data
+/datasets/private/*.csv
+/datasets/private/*.json
+/datasets/public_external/**
+!/datasets/public_external/README.txt
+# Trained models need review before publishing
+/models/*.json
+/models/*.onnx
+*.task
+
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Training datasets and private recordings
+/datasets/private/
+/datasets/public_external/
+*.zip
+*.7z
+*.rar
+
+# Trained models
+/models/*.json
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# Secrets
+.env
+.env.*

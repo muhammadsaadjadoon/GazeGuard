@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gazeguard"
+version = "11.0.0"
+description = "Auto-start local gaze orientation monitoring with optional manual calibration"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+license = {text = "MIT"}
+authors = [{name = "GazeGuard"}]
+dependencies = [
+  "mediapipe==1.2.3",
+  "opencv-contrib-python>=4.12,<5",
+  "numpy>=2,<3",
+  "Pillow>=11,<13",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
+
+[project.scripts]
+gazeguard = "gazeguard.cli:main"
+
+[tool.setuptools.package-data]
+gazeguard = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
