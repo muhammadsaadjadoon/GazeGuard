@@ -23,7 +23,7 @@
 
 Two **real, separately playable GazeGuard screen recordings**, prepared for a professional GitHub presentation. Both preserve their original sequence and all visible dashboard results; they are not synthetic animations or performance benchmarks.
 
-### 01 — Live hand landmark tracking
+### 01: Live hand landmark tracking
 
 **Full original recording · 27.5 seconds · 1× playback speed**
 
@@ -33,7 +33,7 @@ Two **real, separately playable GazeGuard screen recordings**, prepared for a pr
 
 Demonstrates the live camera preview, visible hand recognition, and landmark connections drawn across the fingers and palm. This is the **complete 16:36:28 recording**, with no sections removed; only resolution/compression were optimized for GitHub.
 
-### 02 — Live gaze and attention states
+### 02: Live gaze and attention states
 
 **Full original recording · 17.9 seconds · 1.5× playback speed**
 
@@ -96,7 +96,7 @@ The included trainable model uses **numeric landmark measurements**, not raw ima
 4. Train and inspect lens recall **and** false-ACTIVE results before enabling the model.
 
 ```powershell
-# Collect a session; in the collector use 1–6 for gaze labels and Q to finish.
+# Collect a session; in the collector use 1 to 6 for gaze labels and Q to finish.
 .\.venv\Scripts\python.exe -m training.collect_webcam --participant p01 --consent
 
 # Run after multiple independent recording sessions exist.
